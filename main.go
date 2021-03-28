@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+
+	"github.com/Ho-yeong/WebChat/chat"
+)
+
+var (
+	port = flag.String("p", ":8080", "set port")
+)
+
+func init() {
+	flag.Parse()
+}
 
 func main() {
-	fmt.Print("Hello")
+	chat.Start(*port)
 }
